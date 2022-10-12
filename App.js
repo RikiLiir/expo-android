@@ -1,4 +1,4 @@
-import { StyleSheet, Text, View, Image } from 'react-native';
+import { StyleSheet, Text, View, Image, ScrollView } from 'react-native';
 import * as React from 'react';
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
@@ -21,7 +21,7 @@ const BlogPostPreview = ({title, content, imageUrl}) => {
 const Stack = createNativeStackNavigator();
 function BlogPosts() {
   return (
-    <View style={styles.container}>
+      <ScrollView style={styles.Container}>
       <BlogPostPreview 
         title="My first post"
         content="This is short text of the post"
@@ -37,7 +37,17 @@ function BlogPosts() {
         content="This is short text of the post"
         imageUrl="https://cdn.britannica.com/13/59613-050-D57A3D88/Vladimir-Ilich-Lenin-1918.jpg"
       />
-    </View>
+      <BlogPostPreview 
+        title="My third post"
+        content="This is short text of the post"
+        imageUrl="https://cdn.britannica.com/13/59613-050-D57A3D88/Vladimir-Ilich-Lenin-1918.jpg"
+      />
+      <BlogPostPreview 
+        title="My third post"
+        content="This is short text of the post"
+        imageUrl="https://cdn.britannica.com/13/59613-050-D57A3D88/Vladimir-Ilich-Lenin-1918.jpg"
+      />
+      </ScrollView>
   );
 }
 
@@ -64,10 +74,11 @@ export default function App() {
 
 
 const styles = StyleSheet.create({
-  container: {
+  contentcontainer: {
     flex: 1,
     backgroundColor: '#fff',
     alignItems: 'flex-start',
     justifyContent: 'center',
+    paddingVertical: 20,
   },
 });
